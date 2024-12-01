@@ -234,7 +234,7 @@
                     <h2>Society Photo Gallery</h2>
                     <p>The image below is the Society's <strong>Photo of the Year!</strong></p>
                     <p>Clicking on this photo will take you to the Society's Photo Gallery, a member contributed set of photos showing the best of the members that make the Society what it is!</p>
-                    <p><a href="/gallery/index.html"><img src="/img/gallery/poty2024.jpg" alt="Photo of the Year"/></a></p>
+                    <p><a href="gallery/index.html"><img src="img/gallery/poty2024.jpg" alt="Photo of the Year"/></a></p>
                 </div>
 
                 <div class="four-column-layout">
@@ -248,14 +248,14 @@
                     </div>
                     <div class="four-column">
                         <h3>Cruising Guide</h3>
-                        <p><a href="https://fssorg.wordpress.com" target="_blank"><img src="/img/cruisingguide.jpg"/></a></p>
+                        <p><a href="https://fssorg.wordpress.com" target="_blank"><img src="img/cruisingguide.jpg"/></a></p>
                         <p><strong>There and Back Again</strong> is an on line resource for members of the Friendship Sloop Society to share knowledge concerning safe places to anchor or pick up moorings while cruising, or while in transit to and from Rockland for the annual Friendship Sloop Homecoming.</p>
                     </div>
                     <div class="four-column">
                         <h3>Sloop Provenance</h3>
                         <p>Explore the sloop's ownership and name history since the start of the Society</p>
                         <p>TODO: finish me!</p>
-                        <p><a href="/boatowners.html">Sloop Ownership History</a></p>
+                        <p><a href="boatowners.html">Sloop Ownership History</a></p>
                         <p>Sloop Name link goes here</p>
                     </div>
                     <div class="four-column">
@@ -267,7 +267,7 @@
         </main>
     </div>
     <div id="footer-placeholder"></div>
-    <script src="./js/footer.js"></script>
+    <script src="js/footer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -287,8 +287,8 @@
                         const carouselItem = document.createElement('div');
                         carouselItem.className = 'carousel-item';
                         carouselItem.innerHTML = `
-                            <a href="/pdf/spotlight/${item.file}" target="_blank">
-                                <img src="/img/spotlight/${item.image}" alt="${item.file}">
+                            <a href="pdf/spotlight/${item.file}" target="_blank">
+                                <img src="img/spotlight/${item.image}" alt="${item.file}">
                             </a>
                         `;
                         spotlightContainer.appendChild(carouselItem);
