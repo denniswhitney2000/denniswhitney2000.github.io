@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sloop Ownership Timeline</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .chart-container {
+            width: 100%;
+            height: 100vh; /* Increased height */
+            margin: auto;
+            overflow-y: auto; /* Make the chart scrollable vertically */
+        }
+        .chart-wrapper {
+            height: 350%; /* Increase the height to make it scrollable */
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+</head>
+<body>
+    <div class="chart-container">
+        <div class="chart-wrapper">
+            <canvas id="sloopChart"></canvas>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const csvFilePath = 'boat_owners.csv';
+            const ctx = document.getElementById('sloopChart').getContext('2d');
+
+            Papa.parse(csvFilePath, {
+                download: true,
+                header: true,
+                complete: function(results) {
+                    const data = results.data;
+                    const labels = [];
+                    const datasets = [];
+
+                    // Extract and sort the sloop names
+                    const sloopNames = [...new Set(data.map(item => item['Sloop Name']).filter(name => name))].sort();
+
+                    // Prepare the datasets
+                    sloopNames.forEach(sloopName => {
+                        const sloopData = data.find(item => item['Sloop Name'] === sloopName);
+                        if (!sloopData || !sloopData['Sloop Name'] || !sloopData['Sail']) return; // Skip if no Sail number or Sloop Name
+
+                        const years = Object.keys(sloopData).filter(key => !isNaN(key));
+                        const ownershipPeriods = [];
+                        let currentOwner = null;
+                        let startYear = null;
+
+                        years.forEach(year => {
+                            const owner = sloopData[year];
+                            if (owner !== currentOwner) {
+                                if (currentOwner) {
+                                    ownershipPeriods.push({ owner: currentOwner, startYear, endYear: year - 1 });
+                                }
+                                currentOwner = owner;
+                                startYear = year;
+                            }
+                        });
+
+                        if (currentOwner) {
+                            ownershipPeriods.push({ owner: currentOwner, startYear, endYear: years[years.length - 1] });
+                        }
+
+                        ownershipPeriods.forEach(period => {
+                            datasets.push({
+                                label: period.owner,
+                                data: [
+                                    { x: period.startYear, y: sloopName },
+                                    { x: period.endYear, y: sloopName }
+                                ],
+                                borderColor: getRandomColor(),
+                                fill: false,
+                                pointRadius: 0,
+                                borderWidth: 10, // Make the lines thicker
+                                showLine: true
+                            });
+                        });
+                    });
+
+                    const chart = new Chart(ctx, {
+                        type: 'line',
+                        data: {
+                            labels: sloopNames,
+                            datasets: datasets
+                        },
+                        options: {
+                            responsive: true,
+                            maintainAspectRatio: false,
+                            scales: {
+                                x: {
+                                    type: 'linear',
+                                    title: {
+                                        display: true,
+                                        text: 'Year'
+                                    },
+                                    ticks: {
+                                        stepSize: 1, // Show each year individually
+                                        callback: function(value) {
+                                            return value >= 1961 ? value : '';
+                                        }
+                                    }
+                                },
+                                y: {
+                                    type: 'category',
+                                    title: {
+                                        display: true,
+                                        text: 'Sloop Name'
+                                    },
+                                    ticks: {
+                                        padding: 10 // Add more room between rows
+                                    }
+                                }
+                            },
+                            plugins: {
+                                legend: {
+                                    display: false // Hide the legend
+                                },
+                                tooltip: {
+                                    callbacks: {
+                                        label: function(context) {
+                                            return context.dataset.label + ': ' + context.raw.x;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    });
+                }
+            });
+
+            function getRandomColor() {
+                const letters = '0123456789ABCDEF';
+                let color = '#';
+                for (let i = 0; i < 6; i++) {
+                    color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+            }
+        });
+    </script>
+</body>
+</html>

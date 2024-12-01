@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSS : New Sloop Registration</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+        }
+        .inline-group {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .inline-group label {
+            margin-bottom: 0;
+        }
+        .inline-group input[type="text"] {
+            flex: 1;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script src="/js/header.js"></script>
+    <div id="nav-placeholder"></div>
+    <script src="/js/nav.js"></script>
+
+    <div class="container">
+        <h2>New Sloop Registration</h2>
+        <p>In order for the authentication committee to determine whether or not your sloop is eligible, please provide as much information as available! As a minimum, PLEASE PROVIDE PHOTOGRAPHS; particularly photographs of the hull which illustrate the bottom shape and photographs while under sail. If your sloop was built from customer designed plans, it is requested that a copy of the plans be provided for the Society archival collection.</p>
+        <p>Upon receipt of this request, the Authentication Committee, as per <a href="/about/constitution.html#section-b-authentication-committee">Article VI.c of the FSS Constitution</a> shall rule on the eligibility of sloop owners applying
+            for membership in the Society. Two classes shall be established and defined as follows:
+            <ul>
+                <li>Class "A" Originals: Bonafide Friendship Sloops built before 1920 and approved by the authentication committee</li>
+                <li>Class "B" True Replicas: Sloops built after 1920 and approved by the authentication committee</li>
+            </ul>
+        </p>
+        <p>Upon approval, the owner will be issued a sail number and a certificate of authenticity. The sail number shall be permanently affixed to the sloop in a location visible from the waterline. The sail number shall be in the form of "XXX" where "XXX" is the number assigned by the Society.</p>
+
+        <hr/>
+
+        <form id="payment-form">
+            <h3>PART I: Complete for all sloops</h3>
+            <div class="form-group">
+                <label for="name">Your Name</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="phonenumber">Phone Number</label>
+                <input type="tel" id="phonenumber" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Affiliation:</label>
+                <div>
+                    <label class="radio-inline">
+                        <input type="radio" name="affiliation" value="Owner" required> Owner
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="affiliation" value="Former Owner" required> Former Owner
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="affiliation" value="Builder" required> Builder
+                    </label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <label for="sloopname">Name of Sloop</label>
+                <input type="text" id="sloopname" class="form-control" required>
+                <label for="formername">Former Name(s)</label>
+                <input type="text" id="formername" class="form-control">
+                <small class="form-text text-muted">A comma seperated list of former names, ex: boat1,boat2</small>
+            </div>
+
+            <div class="form-group">
+                <label for="images">Select Images</label>
+                <input type="file" id="images" name="images" class="form-control" multiple accept="image/*">
+                <small class="form-text text-muted">You can upload multiple images. Accepted formats: JPG, PNG, GIF.</small>
+            </div>
+
+            <div class="form-group">
+                <label for="homeport">Homeport</label>
+                <input type="text" id="homeport" class="form-control">
+                <small class="form-text text-muted">Location of your seasonal mooring</small>
+                <label for="state">State</label>
+                <input type="text" id="state" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="datepurchased">Date Purchased</label>
+                <input type="date" id="datepurchased" class="form-control">
+                <label for="datesold">Date Sold</label>
+                <input type="date" id="datesold" class="form-control">
+            </div>
+
+            <div class="form-group">
+                <label for="purchasedfrom">Purchased From</label>
+                <input type="text" id="purchasedfrom" class="form-control">
+                <label for="soldto">Sold To</label>
+                <input type="text" id="soldto" class="form-control">
+                <label for="otherowners">Other Owners</label>
+                <input type="text" id="otherowners" class="form-control">
+                <small class="form-text text-muted">A comma seperated list of former owners, ex: Ernest Shackleton, Johnathan Wick, Bill T. Cat</small>
+            </div>
+
+            <div class="form-group">
+                <label for="purchasedfrom">Purchased From</label>
+                <input type="text" id="purchasedfrom" class="form-control">
+                <label for="soldto">Sold To</label>
+                <input type="text" id="soldto" class="form-control">
+                <label for="otherowners">Other Owners</label>
+                <input type="text" id="otherowners" class="form-control">
+                <small class="form-text text-muted">A comma seperated list of former owners, ex: Ernest Shackleton, Johnathan Wick, Bill T. Cat</small>
+            </div>
+
+            <div class="form-group">
+                <label for="registrationnum">USCG Documentation or State Registration No.</label>
+                <input type="text" id="registrationnum" class="form-control">
+                <label for="formerregistrationnum">Former Registration No.</label>
+                <input type="text" id="formerregistrationnum" class="form-control">
+                <label for="sailno">Friendship Sloop Society Sail No.</label>
+                <input type="text" id="sailno" class="form-control">
+            </div>
+
+            <strong>If not known, or if an unregistered sloop, please complete Part II below</strong>
+
+            <hr/>
+
+            <h3>PART II: Unknown Sail No or Unregistered Sloop</h3>
+
+            <div class="form-group">
+                <label for="originallaunchdate">Original Launch Date</label>
+                <input type="date" id="originallaunchdate" class="form-control">
+                <label for="wherebuilt">Where Built</label>
+                <input type="text" id="wherebuilt" class="form-control">
+                <label for="originalstate">State</label>
+                <input type="text" id="originalstate" class="form-control">
+                <label for="designer">Designer</label>
+                <input type="text" id="designer" class="form-control">
+                <label for="builder">Builder</label>
+                <input type="text" id="builder" class="form-control">
+                <label for="finish">Finish</label>
+                <input type="text" id="finish" class="form-control">
+            </div>
+            
+            <div class="form-group">
+                <label>Material</label>
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="material" value="Wood" required> Wood
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="material" value="Fiberglass" required> Fiberglass
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="material" value="Other" required> Other
+                    </label>
+                    <label for="othermaterial">Other Material</label>
+                    <input type="text" id="othermaterial" class="form-control">
+                </div>
+                <small class="form-text text-muted">If you chose 'Other', please provide the comma separated materials list, ex: gold, titanium, uranium</small>
+            </div>
+
+            <div class="form-group">
+                <label>Rig</label>
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="rig" value="Headsail" required> Headsail
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="rig" value="Headsails" required> Headsails
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="rig" value="Topsails" required> Topsails
+                    </label>
+                    <label for="otherrig">Non-Traditional Rig:</label>
+                    <input type="text" id="otherrig" class="form-control">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Power</label>
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="power" value="None" required> None
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="power" value="Outboard" required> Outboard
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="power" value="Inboard" required> Inboard
+                    </label>
+                </div>
+            </div>
+            
+            <div class="form-group">
+                <label>Power plant</label>
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="rig" value="Gas" required> Gas
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="rig" value="Diesel" required> Diesel
+                    </label>
+                    <label for="hoursepower">Hourse Power:</label>
+                    <input type="text" id="hoursepower" class="form-control">
+                    <label for="enginemodel">Model:</label>
+                    <input type="text" id="enginemodel" class="form-control">
+                    <label for="engineyear">Year:</label>
+                    <input type="text" id="engineyear" class="form-control">                    
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="length">Length:</label>
+                <input type="text" id="length" class="form-control">
+                <small class="form-text text-muted">Classic Measurement excluding Billethead: Centerline Length from Stem Rabbet to Transom</small>
+                <label for="lengthonwaterline">Length on Waterline</label>
+                <input type="text" id="lengthonwaterline" class="form-control">
+                <label for="beam">Beam</label>
+                <input type="text" id="beam" class="form-control">
+                <label for="draught">Draught</label>
+                <input type="text" id="draught" class="form-control">
+            </div>
+
+            <button type="submit" class="btn btn-primary">Submit Registration Request</button>
+
+            <hr/>
+
+        </form>
+    </div>
+
+    <div id="footer-placeholder"></div>
+    <script src="/js/footer.js"></script>
+
+</body>
+</html>

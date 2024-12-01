@@ -1,0 +1,415 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FSS : Handicap Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        .form-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        .form-row .form-group {
+            flex: 1;
+            min-width: 200px; /* Adjust as needed */
+        }
+        .form-control-auto-width {
+            width: auto;
+            display: inline-block;
+        }
+        .two-column-layout {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        .left-column, .right-column {
+            flex: 1;
+        }
+        .left-column img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+        .text-with-image {
+            display: flex;
+            align-items: flex-start;
+            gap: 20px;
+        }
+        .text-with-image img {
+            max-width: 200px; /* Adjust as needed */
+            height: auto;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script src="/js/header.js"></script>
+    <div id="nav-placeholder"></div>
+    <script src="/js/nav.js"></script>
+
+    <div class="container">
+        <h2>Handicap Application</h2>
+        <p><strong>Notes:</strong>
+            <ul>
+                <li>Missing Information will constitute an incomplete application</li>
+                <li>Applications must be received by the FSS Handicap Committee by June 30th</li>
+            </ul>
+        </p>
+
+        <hr/>
+
+        <form id="hadicap-form">
+            <div class="form-group">
+                <label for="sloopname">Sloop Name</label>
+                <input type="text" id="sloopname" class="form-control" required>
+                <label for="sailno">Sail No</label>
+                <input type="text" id="sailno" class="form-control" required>
+                <label for="homeport">Home Port</label>
+                <input type="text" id="homeport" class="form-control" required>
+                <label for="state">State / Province</label>
+                <input type="text" id="state" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="builder">Builder</label>
+                <input type="text" id="builder" class="form-control" required>
+                <label for="yearbuilt">Year Built</label>
+                <input type="text" id="yearbuilt" class="form-control" required>
+                <label for="owner">Owner</label>
+                <input type="text" id="owner" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address1">Address 1</label>
+                <input type="text" id="address1" class="form-control" required>
+                <label for="address2">Address 2</label>
+                <input type="text" id="address2" class="form-control">
+                <label for="city">City</label>
+                <input type="text" id="city" class="form-control" required>
+                <label for="state">State</label>
+                <input type="text" id="state" class="form-control" required>
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" class="form-control" required>
+                <label for="phonenumber">Phone Numer</label>
+                <input type="phonenumber" id="phonenumber" class="form-control">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <h3>Hull Construction</h3>
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="material" value="Wood" required> Wood
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="material" value="Fiberglass" required> Fiberglass
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="material" value="Other" required> Other
+                    </label>
+                </div>
+                <label for="othermaterial">Other Material</label>
+                <input type="text" id="othermaterial" class="form-control">
+                <small class="form-text text-muted">If you chose 'Other', please provide the comma separated materials list, ex: gold, titanium, uranium</small>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <h3>Spar Material</h3>
+                <div class="inline-group">
+                    <label for="mastmadeof">Mast</label>
+                    <input type="text" id="mastmadeof" class="form-control">
+                    <label for="boommadeof">Boom</label>
+                    <input type="text" id="boommadeof" class="form-control">
+                    <label for="gaffmadeof">Gaff</label>
+                    <input type="text" id="gaffmadeof" class="form-control">
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <h3>Auxiliary Power</h3>
+                <div class="inline-group">
+                    <label for="typeofpower">Type</label>
+                    <input type="text" id="typeofpower" class="form-control">
+                    <label for="horsepower">Horsepower</label>
+                    <input type="text" id="horsepower" class="form-control">
+                    <label for="approxweight">Approx Weight</label>
+                    <input type="text" id="approxweight" class="form-control">
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <h3>Ballast</h3>
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="ballast" value="interior" required> Interior
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="ballast" value="exterior" required> Exterior
+                    </label>
+                </div>
+                <label for="ballasttype">Type</label>
+                <input type="text" id="ballasttype" class="form-control">
+                <label for="ballastapproxweight">Approx Weight</label>
+                <input type="text" id="ballastapproxweight" class="form-control">
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <h3>Accomodations</h3>
+                
+                <label for="numberberths"># of Berths</label>
+                <select id="numberberths" name="numberberths" class="form-control form-control-auto-width">
+                    <option value="1">1</option>
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="checkbox" name="icebox" value="true"> Built-in Ice Box
+                </label>
+            </div>
+
+            <div class="form-group">
+                <div class="inline-group">
+                    <strong>Head Type</strong>
+                    <label class="radio-inline">
+                        <input type="radio" name="headtype" value="marinetoilet" required> Built In Marine Toilet
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="headtype" value="portapotty" required> Porta Potty
+                    </label>
+                </div>
+
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="checkbox" name="stove" value="true"> Built-in Stove?
+                    </label>
+                    <label for="approxweight">Stove Details</label>
+                    <input type="text" id="approxweight" class="form-control">
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="inline-group">
+                <h3>Hull measurements</h3>
+                <div class="two-column-layout">
+                    
+                    <div class="left-column">
+                        <img src="/img/handicap/handicap1.jpg" alt="Handicap Hull Measurement Guide">
+                    </div>
+                    <div class="right-column">
+                        <div class="form-group">
+                            <label for="loa">LOA</label>
+                            <input type="text" id="loa" class="form-control" required>
+                            <label for="lwl">LWL:</label>
+                            <input type="text" id="lwl" class="form-control">
+                            <label for="foh">FOH:</label>
+                            <input type="text" id="foh" class="form-control" required>
+                            <label for="aoh">AOH</label>
+                            <input type="text" id="aoh" class="form-control" required>
+                        </div>
+                        <p><strong>LOA = LWL + FOH + AOH</strong></p>
+                        <p>When forward and aft overhang (FOH and AOH) are measured, there should be no one aboard the sloop. For such craft without rabbetts. (FRP, ferro-cement, etc.), measure LOA & FOH to the face of the stem at both deck &amp; water, then reduce the measured LOA by 3".</p>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+    
+            <div class="form-group">
+                <h3>Propeller</h3>
+                
+                <label for="numberblades"># of Blades</label>
+                <select id="numberblades" name="numberblades" class="form-control form-control-auto-width">
+                    <option value="2">2</option>
+                    <option value="3">3</option>
+                    <option value="4">4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="checkbox" name="feathering" value="true"> Feathering
+                </label>
+            </div>
+
+            <div class="form-group">
+                <label class="radio-inline">
+                    <input type="checkbox" name="solid" value="true"> Solid
+                </label>
+            </div>
+
+            <div class="form-group">
+                <div class="inline-group">
+                    <label class="radio-inline">
+                        <input type="radio" name="centerline" value="on" required> On Centerline?
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="centerline" value="of" required> Off Centerline?
+                    </label>
+                </div>
+            </div>
+
+            <div class="inline-group">
+                <h3>Sail measurements</h3>
+                <div class="two-column-layout">
+                    
+                    <div class="left-column">
+                        <img src="/img/handicap/handicap2.jpg" alt="Handicap Mainsail Measurement Guide">
+                    </div>
+                    <div class="right-column">
+
+                        <div class="form-group text-with-image">
+                            <p><strong>Attention:</strong> When measuring sails, take measurements at the intersection of the extreme edge of the sail as shown. Sails should be hauled taut as when set before taking measurements.</p>
+                            <img src="/img/handicap/handicap4.jpg" alt="example">
+                        </div>
+                        
+                        <h4>Main Sail</h4>
+                        <div class="form-group">
+                            <label for="hoist">Hoist</label>
+                            <div class="inline-group">
+                                <input type="number" id="hoist-feet" name="hoist-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="hoist-inches" name="hoist-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="foot">Foot</label>
+                            <div class="inline-group">
+                                <input type="number" id="foot-feet" name="foot-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="foot-inches" name="foot-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="head">Head</label>
+                            <div class="inline-group">
+                                <input type="number" id="head-feet" name="head-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="head-inches" name="head-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="leach">Leach</label>
+                            <div class="inline-group">
+                                <input type="number" id="leach-feet" name="leach-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="leach-inches" name="leach-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sailmaterial">Sail Material:</label>
+                            <input type="text" id="sailmaterial" class="form-control" required>
+                        </div>
+
+                        <div class="inline-group">
+                            <label class="radio-inline">
+                                <input type="checkbox" name="battens" value="true" required> Battens?
+                            </label>
+                        </div>
+
+                        <h4>Top Sail</h4>
+                        <p>From top of tops'1 block</p>
+                        <div class="form-group">
+                            <label for="pt">PT</label>
+                            <div class="inline-group">
+                                <input type="number" id="pt-feet" name="pt-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="pt-inches" name="pt-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="lh">LH</label>
+                            <div class="inline-group">
+                                <input type="number" id="lh-feet" name="lh-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="lh-inches" name="lh-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="inline-group">
+                <div class="two-column-layout">
+                    
+                    <div class="left-column">
+                        <img src="/img/handicap/handicap3.jpg" alt="Handicap Mainsail Measurement Guide">
+                    </div>
+                    <div class="right-column">
+
+                        <div class="form-group text-with-image">
+                            <p><strong>Attention:</strong> When measuring sails, take measurements at the intersection of the extreme edge of the sail as shown. Sails should be hauled taut as when set before taking measurements.</p>
+                            <img src="/img/handicap/handicap4.jpg" alt="example">
+                        </div>
+                        
+                        <h4>Fore Triangle</h4>
+                        <div class="form-group">
+                            <label for="heightp2">Height (P2)</label>
+                            <div class="inline-group">
+                                <input type="number" id="heightp2-feet" name="heightp2-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="heightp2-inches" name="heightp2-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="baseb2">Base (B2)</label>
+                            <div class="inline-group">
+                                <input type="number" id="baseb2-feet" name="baseb2-feet" class="form-control form-control-auto-width" placeholder="Feet" required>
+                                <input type="number" id="baseb2-inches" name="baseb2-inches" class="form-control form-control-auto-width" placeholder="Inches" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="sailmaterial">Sail Material:</label>
+                            <input type="text" id="sailmaterial" class="form-control" required>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="inline-group">
+                <p>Upon clicking the button below, you are attesting to giving the most accurate data you can provide and are acting in good faith.</p>
+                <p>If you need help filling out this form, please contact the <a href="mailto:measurer@fss.org">Offical Measurer of the FSS</a></p>
+                <button type="submit" class="btn btn-primary">Submit Handicap Application</button>
+            </div>
+
+        </form>
+    </div>
+    <div id="footer-placeholder"></div>
+    <script src="/js/footer.js"></script>
+
+</body>
+</html>

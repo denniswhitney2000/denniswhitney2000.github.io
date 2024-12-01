@@ -1,0 +1,45 @@
+<style>
+    .navbar {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    .navbar ul {
+        display: flex;
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    .navbar ul li {
+        margin-right: 20px;
+    }
+    .search-form {
+        display: flex;
+        align-items: center;
+    }
+    .search-input {
+        padding: 5px;
+        font-size: 14px;
+    }
+    .search-button {
+        padding: 5px 10px;
+        font-size: 14px;
+        margin-left: 5px;
+    }
+</style>
+
+<nav class="navbar">
+    <ul>
+        <li><a href="/index.html"><img src="/img/burgee-mini.jpg" alt="Go to Home port"/></a></li>
+        <li><a href="/about/index.html">About</a></li>
+        <li><a href="/sloops/index.html">Our Sloops</a></li>
+        <li><a href="/events/index.html">Events</a></li>
+        <li><a href="/publications/index.html">Publications</a></li>
+        <li><a href="#">Chandlery (wip)</a></li>
+    </ul>
+    <form action="https://www.google.com/search" method="get" class="search-form">
+        <input type="text" name="q" placeholder="Search fss.org" class="search-input" size="25">
+        <input type="hidden" name="sitesearch" value="fss.org">
+        <button type="submit" class="search-button">Search</button>
+    </form>
+</nav>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Membership Application</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/css/styles.css">
+    <style>
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-control {
+            width: 100%;
+        }
+        .radio-inline {
+            display: inline-block;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="header-placeholder"></div>
+    <script src="/js/header.js"></script>
+    <div id="nav-placeholder"></div>
+    <script src="/js/nav.js"></script>
+
+    <div class="container">
+        <h2>Membership Application</h2>
+        <p>By joining the Friendship Sloop Society, you become part of a community dedicated to preserving and celebrating the rich maritime heritage of the Friendship sloop. We look forward to welcoming you aboard!</p>
+        <p>All Memberships Receive:
+            <ul>
+                <li>All Society Mailings</li>
+                <li>The Annual Yearbook</li>
+                <li>A Membership Card</li>
+                <li>One Membership Decal</li>
+                <li>Entry Rights for Participation in the Society Regattas and Functions</li>
+                <li>Voting Rights for Two Adults</li>
+            </ul>
+        </p>
+
+        <hr/>
+        <h3>TODO: Membership Types</h3>
+        <p>The Friendship Sloop Society offers several types of memberships to accommodate different levels of involvement and interest:</p>
+        <ul>
+            <li><strong>Individual Membership:</strong> Ideal for individuals who own a Friendship sloop or have a keen interest in these historic vessels. Members receive newsletters, event invitations, and access to Society resources.</li>
+            <li><strong>Family Membership:</strong> Suitable for families who wish to participate in Society activities together. Includes all benefits of individual membership for all family members.</li>
+            <li><strong>Associate Membership:</strong> Designed for those who appreciate the Friendship sloop but do not own one. Members receive newsletters and event invitations.</li>
+            <li><strong>Corporate Membership:</strong> For businesses and organizations that support the Society's mission. Includes promotional opportunities and recognition at events.</li>
+            <li><strong>Lifetime Membership:</strong> A one-time payment option for individuals or families who wish to support the Society long-term. Includes all benefits of individual or family membership for life.</li>
+        </ul>
+        <p>This needs to be finished off</p>
+        <hr/>
+
+
+        <p>
+            <strong>FULL MEMBERSHIP - $40</strong><br/>
+            Sloop owners and other interested parties and/or persons. A family-type membership. Full voting privileges, for two adults.
+        </p>
+        <p>
+            <strong>COOPERATIVE MEMBER - $30</strong><br/>
+            Trades people, interested people, etc. No voting privileges. Names carried on the mailing list.
+        </p>
+        <p>Extra Membership Decals are Available at $2 each.</p>
+        <p>Society Burgees are available, the small is $30 and the large is $35</p>
+
+        <form id="membership-form">
+            <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="address1">Address 1</label>
+                <input type="text" id="address1" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="address2">Address 2</label>
+                <input type="text" id="address2" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label for="city">City</label>
+                <input type="text" id="city" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="state">State</label>
+                <input type="text" id="state" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="zip">Zip Code</label>
+                <input type="text" id="zip" class="form-control" required>
+            </div>
+
+            <div class="form-group">
+                <label>Affiliation with Friendship Sloops</label>
+                <div>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="Owner" required> Owner
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="Former Owner" required> Former Owner
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="Builder" required> Builder
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="Crew" required> Crew
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="Family" required> Family
+                    </label>
+                    <label class="radio-inline">
+                        <input type="radio" name="role" value="Friend of Friendship Sloops" required> Friend of Friendship Sloops
+                    </label>
+                </div>
+
+                <div class="form-group">
+                    <label for="affiliatedsloop">Affiliated Friendship Sloop (if applicable)</label>
+                    <select id="affiliatedsloop" class="form-control">
+                        <option value="">Select a sloop</option>
+                        <option value="Tanis">Tanis</option>
+                        <option value="Gaivota">Gaivota</option>
+                        <!-- Options will be populated by JavaScript -->
+                    </select>
+                </div>
+
+                <div class="form-group">
+                    <label for="sailno">Sail No.</label>
+                    <input type="text" id="sailno" class="form-control">
+                </div>
+
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <label>Membership Type</label>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="membershipType" id="fullMembership" value="40" required>
+                    <label class="form-check-label" for="fullMembership">Full Membership - $40</label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="radio" name="membershipType" id="cooperativeMember" value="30" required>
+                    <label class="form-check-label" for="cooperativeMember">Cooperative Member - $30</label>
+                </div>
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <label for="generalfund">Optional Contribution to the FSS General Fund</label>
+                <input type="text" id="generalfund" class="form-control">
+            </div>
+
+            <hr/>
+
+            <div class="form-group">
+                <label for="cardelement">Credit or debit card</label>
+                <div id="cardelement" class="form-control">
+                    <!-- A Stripe Element will be inserted here. -->
+                </div>
+                <!-- Used to display form errors. -->
+                <div id="card-errors" role="alert"></div>
+            </div>
+            <button type="submit" class="btn btn-primary">Submit Payment</button>
+
+            <hr/>
+
+        </form>
+    </div>
+
+    <script src="https://js.stripe.com/v3/"></script>
+    <script>
+        // Set your publishable key: remember to change this to your live publishable key in production
+        // See your keys here: https://dashboard.stripe.com/apikeys
+        var stripe = Stripe('your-publishable-key-here');
+        var elements = stripe.elements();
+
+        // Custom styling can be passed to options when creating an Element.
+        var style = {
+            base: {
+                color: '#32325d',
+                fontFamily: '"Helvetica Neue", Helvetica, sans-serif',
+                fontSmoothing: 'antialiased',
+                fontSize: '16px',
+                '::placeholder': {
+                    color: '#aab7c4'
+                }
+            },
+            invalid: {
+                color: '#fa755a',
+                iconColor: '#fa755a'
+            }
+        };
+
+        // Create an instance of the card Element.
+        var card = elements.create('card', {style: style});
+
+        // Add an instance of the card Element into the `cardelement` <div>.
+        card.mount('#cardelement');
+
+        // Handle real-time validation errors from the card Element.
+        card.on('change', function(event) {
+            var displayError = document.getElementById('card-errors');
+            if (event.error) {
+                displayError.textContent = event.error.message;
+            } else {
+                displayError.textContent = '';
+            }
+        });
+
+        // Handle form submission.
+        var form = document.getElementById('membership-form');
+        form.addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            stripe.createToken(card).then(function(result) {
+                if (result.error) {
+                    // Inform the user if there was an error.
+                    var errorElement = document.getElementById('card-errors');
+                    errorElement.textContent = result.error.message;
+                } else {
+                    // Send the token to your server.
+                    stripeTokenHandler(result.token);
+                }
+            });
+        });
+
+        // Submit the form with the token ID.
+        function stripeTokenHandler(token) {
+            // Insert the token ID into the form so it gets submitted to the server
+            var form = document.getElementById('membership-form');
+            var hiddenInput = document.createElement('input');
+            hiddenInput.setAttribute('type', 'hidden');
+            hiddenInput.setAttribute('name', 'stripeToken');
+            hiddenInput.setAttribute('value', token.id);
+            form.appendChild(hiddenInput);
+
+            // Submit the form
+            form.submit();
+        }
+    </script>
+
+    <div id="footer-placeholder"></div>
+    <script src="/js/footer.js"></script>
+
+</body>
+</html>
