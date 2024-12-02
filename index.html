@@ -168,10 +168,10 @@
 </head>
 <body>
     <div id="header-placeholder"></div>
-    <script src="js/header.js"></script>
+    <script src="/js/header.js"></script>
 
     <div id="nav-placeholder"></div>
-    <script src="js/nav.js"></script>
+    <script src="/js/nav.js"></script>
     
     <div class="container">
         <main class="content" id="main-content">
@@ -185,12 +185,12 @@
                             <div class="blog-post">
                                 <h3>FSS Annual Meeting</h3>
                                 <p>The Annual Meeting Schedule includes social time, a live auction, a business meeting with awards, a cash bar and cocktails, a buffet dinner, and evening cocktails and snacks. Attendees are encouraged to bring photos, stories, and items for the auctions, with proceeds benefiting the FSS general fund and Scholarship fund.</p>
-                                <a href="blog/officers/officers1.html">Read More</a>
+                                <a href="/publications/blog/officers/officers1.html">Read More</a>
                             </div>
                             <div class="blog-post">
                                 <h3>Annual Message 2024</h3>
                                 <p>The Friendship Sloop Society invites members to the 2024 Annual Meeting on November 23rd in South Portland, Maine. Join fellow enthusiasts to discuss the past year, plan future events, and enjoy auctions, food, and drinks. Membership renewals and donations support the Society's mission and are tax-deductible.</p>
-                                <a href="blog/officers/officers2.html">Read More</a>
+                                <a href="/publications/blog/officers/officers2.html">Read More</a>
                             </div>
                         </div>
 
@@ -204,7 +204,7 @@
                             <h3>Lasting Friendships</h3>
                             <div class="featured-content">
                                 <div class="image-container">
-                                    <img src="img/bookcover.jpg" alt="Book Cover" class="book-cover">
+                                    <img src="/img/bookcover.jpg" alt="Book Cover" class="book-cover">
                                     <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top" class="paypal-button">
                                         <input type="hidden" name="cmd" value="_s-xclick">
                                         <input type="hidden" name="hosted_button_id" value="QXCUH754288U4">
@@ -241,7 +241,7 @@
                     <h2>Society Photo Gallery</h2>
                     <p>The image below is the Society's <strong>Photo of the Year!</strong></p>
                     <p>Clicking on this photo will take you to the Society's Photo Gallery, a member contributed set of photos showing the best of the members that make the Society what it is!</p>
-                    <p><a href="gallery/index.html"><img src="img/gallery/poty2024.jpg" alt="Photo of the Year"/></a></p>
+                    <p><a href="/gallery/index.html"><img src="/img/gallery/poty2024.jpg" alt="Photo of the Year"/></a></p>
                 </div>
 
                 <div class="four-column-layout">
@@ -255,7 +255,7 @@
                     </div>
                     <div class="four-column">
                         <h3>Cruising Guide</h3>
-                        <p><a href="https://fssorg.wordpress.com" target="_blank"><img src="img/cruisingguide.jpg"/></a></p>
+                        <p><a href="https://fssorg.wordpress.com" target="_blank"><img src="/img/cruisingguide.jpg"/></a></p>
                         <p><strong>There and Back Again</strong> is an on line resource for members of the Friendship Sloop Society to share knowledge concerning safe places to anchor or pick up moorings while cruising, or while in transit to and from Rockland for the annual Friendship Sloop Homecoming.</p>
                     </div>
                     <div class="four-column">
@@ -274,7 +274,7 @@
         </main>
     </div>
     <div id="footer-placeholder"></div>
-    <script src="js/footer.js"></script>
+    <script src="/js/footer.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
     <script>
         document.addEventListener('DOMContentLoaded', function() {
@@ -294,8 +294,8 @@
                         const carouselItem = document.createElement('div');
                         carouselItem.className = 'carousel-item';
                         carouselItem.innerHTML = `
-                            <a href="pdf/spotlight/${item.file}" target="_blank">
-                                <img src="img/spotlight/${item.image}" alt="${item.file}">
+                            <a href="/pdf/spotlight/${item.file}" target="_blank">
+                                <img src="/img/spotlight/${item.image}" alt="${item.file}">
                             </a>
                         `;
                         spotlightContainer.appendChild(carouselItem);
@@ -328,7 +328,7 @@
                     sponsorContent.innerHTML = `
                         <a href="${sponsor.URL}" target="_blank">
                             <p>${sponsor.Title}</p>
-                            <img src="img/sponsors/${sponsor.image}" alt="${sponsor.Title}">
+                            <img src="/img/sponsors/${sponsor.image}" alt="${sponsor.Title}">
                         </a>
                     `;
                     sponsorContainer.appendChild(sponsorContent);
@@ -340,7 +340,7 @@
     <!-- Script to load events from events/index.html -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-            fetch('events/index.html')
+            fetch('/events/index.html')
                 .then(response => response.text())
                 .then(data => {
                     // Create a temporary DOM element to parse the fetched HTML
