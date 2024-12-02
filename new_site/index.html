@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self' https://denniswhitney2000.github.io/new_site/js/">
+    <meta http-equiv="Content-Security-Policy" content="
+    default-src 'self'; 
+    script-src 'self' 'unsafe-inline' https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js;
+    style-src 'self' 'unsafe-inline';
+    img-src *; 
+    connect-src 'self';
+    ">
     <title>Friendship Sloop Society Home Page</title>
     <link rel="stylesheet" href="css/styles.css">
     <style>
